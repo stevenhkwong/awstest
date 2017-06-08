@@ -1,4 +1,4 @@
-FROM swong/aws1
+FROM swong/aws1:v1
 
 MAINTAINER Steven HK Wong version: 0.1
 
