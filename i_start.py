@@ -4,10 +4,28 @@ import boto.ec2
 import os
 import sys, getopt
 
+TAG = 'awstest'
+
 debug = 0
 default_key = 'XXXX'
 default_secret = 'XXXX'
 qty=0
+
+#try:
+#	regions = boto.ec2.regions()
+#except Exception, e:
+#	print "failed to get regions!!\n"
+#	sys.exit(2)
+#
+#if regions == None:
+#	print "no regions!!\n"
+#	sys.exit(2)
+#
+#print "Available regions:"
+#for r in regions:
+#	print "  - %s" % (r)
+#
+#
 
 
 def usage():
@@ -67,5 +85,6 @@ print "reservation id: %s" % (reservation.id)
 for instance in reservation.instances:
 	print "id - %s" % (instance.id)
 	print "ip - %s" % (instance.ip_address)
+	instance.add_tag('name', TAG)
 
 

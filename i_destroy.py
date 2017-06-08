@@ -4,6 +4,7 @@ import boto.ec2
 import os
 import sys, getopt
 
+TAG = 'awstest'
 debug = 0
 all = False
 theinstance = None
@@ -78,11 +79,14 @@ for r in reservations:
 		print "reservation id: %s" % (r.id)
 		print "ec2 instances: "
 	for instance in r.instances:
+		tag = ''
 		if debug == 1:
 			print "\tid - %s" % (instance.id)
 			print "\tip - %s" % (instance.ip_address)
 			print "\tstate - %s" % (instance.state)
-		if instance.state == "running":
+		if instance.tags.has_key('name'):
+			tag = instance.tags['name']
+		if tag == TAG:
 			if all == True or theinstance == instance.id:
 				print "terminating - %s" % (instance.id)
 				conn.terminate_instances(instance.id)
