@@ -1,4 +1,4 @@
-FROM centos7:v1
+FROM swong:aws1
 
 MAINTAINER Steven HK Wong version: 0.1
 
