@@ -1,4 +1,4 @@
-FROM swong/aws1:v1
+FROM centos7:v1
 
 MAINTAINER Steven HK Wong version: 0.1
 
@@ -9,6 +9,7 @@ ADD i_start.py /var/www/html/
 ADD i_destroy.py /var/www/html/
 ADD i_status.py /var/www/html/
 ADD i_test.py /var/www/html/
+RUN ln -s /var/www/html/i_test.py /usr/bin/unittest
 
 EXPOSE 80
 
