@@ -6,7 +6,8 @@ Available on dockerhub as swong/awstest:master
 
 	# unittest - docker run swong/awstest:master  unittest
 
-	# web application - docker run -d 80:80 swong/awstest:master
+	# web application - from docker.io: docker run -d 80:80 swong/awstest
+											from codefresh.io: http://cf-aue1-docker-node-0037.cf-cd.com:32825/index.php
 
 	# i_start.py - launch EC2 instances
 		             i_start.py [-h] -q number of instances -k aws_keyid -s aws_key_secret
