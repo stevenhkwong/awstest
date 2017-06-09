@@ -4,7 +4,7 @@ Dockerfile provides an instance of web service on apache/php
 Available on dockerhub as swong/awstest:master
 
 
-	# unittest - docker run swong/awstest:master  unittest
+	# unittest - docker run swong/awstest unittest
 
 	# web application - from docker.io: docker run -d 80:80 swong/awstest
 											from codefresh.io: http://cf-aue1-docker-node-0037.cf-cd.com:32825/index.php
